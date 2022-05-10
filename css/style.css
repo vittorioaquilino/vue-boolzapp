@@ -6,7 +6,8 @@
 
 html {
     font-family: 'Lato', sans-serif;
-    background-color: #D7DBD7;
+    /* background-color: #D7DBD7; */
+    background: linear-gradient(#009688 20%, #dcdbd1 20%)
 }
 
 /* MAIN */
@@ -199,7 +200,7 @@ html {
     padding: .5rem;
     margin: .4rem;
     font-size: .7rem;
-    border: 1px solid white;
+    border: none;
     border-radius: 5px;
 }
 
@@ -225,10 +226,13 @@ html {
 
 .text-send {
     max-width: 50%;
+    width: 30%;
     background-color: #D5F9BA;
     border-radius: 5px;
     padding: .8rem;
     font-size: .8rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .text-received {
@@ -237,4 +241,13 @@ html {
     border-radius: 5px;
     padding: .8rem;
     font-size: .8rem;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.text-time {
+    font-size: .5rem;
+    align-self: flex-end;
+    color: lightgray;
 }
