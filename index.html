@@ -58,78 +58,18 @@
 
                     <!-- side other chat -->
                     <div class="side-other-chat">
-                        <div class="chat-item">
+                        <div 
+                        v-for="(element, index) in contacts" 
+                        class="chat-item"
+                        >
                             <div class="user-img">
-                                <img src="img/avatar_1.jpg" alt="">
+                                <img :src="'img/avatar' + contacts[index].avatar + '.jpg'" alt="">
                             </div>
                             <div class="chat-text">
-                                <span>Michele</span>
+                                <span>{{ contacts[index].name }}</span>
                                 <p>Ultimo messaggio inviato</p>
                             </div>
-                        </div>
-                        <div class="chat-item">
-                            <div class="user-img">
-                                <img src="img/avatar_2.jpg" alt="">
-                            </div>
-                            <div class="chat-text">
-                                <span>Fabio</span>
-                                <p>Ultimo messaggio inviato</p>
-                            </div>
-                        </div>
-                        <div class="chat-item">
-                            <div class="user-img">
-                                <img src="img/avatar_3.jpg" alt="">
-                            </div>
-                            <div class="chat-text">
-                                <span>Samuele</span>
-                                <p>Ultimo messaggio inviato</p>
-                            </div>
-                        </div>
-                        <div class="chat-item">
-                            <div class="user-img">
-                                <img src="img/avatar_4.jpg" alt="">
-                            </div>
-                            <div class="chat-text">
-                                <span>Alessandro B.</span>
-                                <p>Ultimo messaggio inviato</p>
-                            </div>
-                        </div>
-                        <div class="chat-item">
-                            <div class="user-img">
-                                <img src="img/avatar_5.jpg" alt="">
-                            </div>
-                            <div class="chat-text">
-                                <span>Alessandro L.</span>
-                                <p>Ultimo messaggio inviato</p>
-                            </div>
-                        </div>
-                        <div class="chat-item">
-                            <div class="user-img">
-                                <img src="img/avatar_6.jpg" alt="">
-                            </div>
-                            <div class="chat-text">
-                                <span>Claudia</span>
-                                <p>Ultimo messaggio inviato</p>
-                            </div>
-                        </div>
-                        <div class="chat-item">
-                            <div class="user-img">
-                                <img src="img/avatar_7.jpg" alt="">
-                            </div>
-                            <div class="chat-text">
-                                <span>Federico</span>
-                                <p>Ultimo messaggio inviato</p>
-                            </div>
-                        </div>
-                        <div class="chat-item">
-                            <div class="user-img">
-                                <img src="img/avatar_8.jpg" alt="">
-                            </div>
-                            <div class="chat-text">
-                                <span>Davide</span>
-                                <p>Ultimo messaggio inviato</p>
-                            </div>
-                        </div>
+                        </div>  
                     </div>
                     <!-- /side other chat -->
                 </section>
@@ -141,10 +81,10 @@
                     <div class="main-chat-profile">
                         <div class="left">
                             <div class="user-img">
-                                <img src="img/avatar_1.jpg" alt="">
+                                <img :src="'img/avatar' + contacts[0].avatar + '.jpg'" alt="">
                             </div>
                             <div class="chat-text">
-                                <span>Michele</span>
+                                <span>{{ contacts[0].name }}</span>
                                 <p>Ultimo accesso oggi alle 12:00</p>
                             </div>
                         </div>
@@ -173,7 +113,7 @@
                             <div class="text-send">si dai abbastanza bene </div>
                         </div>
                         <div class="wrapper-right">
-                            <div class="text-send">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis voluptates deleniti repudiandae ullam, fugit iusto, consequatur corrupti ab tempore consequuntur, dolore excepturi quas expedita veniam molestias aut libero recusandae atque? </div>
+                            <div class="text-send">oggi che fai? </div>
                         </div>
                     </div>
                     <!-- /chat open -->
