@@ -64,7 +64,7 @@
                         :class="{ 'contact-active' : currentContact === index }"
                         >
                             <div class="user-img">
-                                <img :src="'img/avatar' + contacts[index].avatar + '.jpg'" alt="">
+                                <img :src="'img/avatar' + element.avatar + '.jpg'" alt="">
                             </div>
                             <div class="chat-text">
                                 <span>{{ element.name }}</span>
@@ -103,41 +103,14 @@
                     <!-- chat open -->
                     <div class="main-chat">
                         <div 
-                        v-for="(element, index) in contacts"
-                        class="wrapper-left"
+                        v-for="(element, index) in contacts[currentContact].messages"
+                        :class="element.status === 'sent' ? 'wrapper-right' : 'wrapper-left' "
                         >
-                            <div class="text-received">
-                                <span>{{ contacts.message }}</span>
-                                <div class="text-time">15:30</div>
-                            </div>
-                        </div>
-                        <div 
-                        v-for="(element, index) in contacts"
-                        class="wrapper-right"
-                        >
-                            <div class="text-send">
+                            <div :class="element.status === 'sent' ? 'text-send' : 'text-received'">
                                 <span>{{ element.message }} </span> 
-                                <div class="text-time">15:40</div>
+                                <div class="text-time">{{ element.date }}</div>
                             </div>
                         </div>
-                        <!-- <div class="wrapper-left">
-                            <div class="text-received">
-                                <span>tutto bene a te?</span> 
-                                <div class="text-time">16:00</div>
-                            </div>
-                        </div>
-                        <div class="wrapper-right">
-                            <div class="text-send">
-                                <span>si dai abbastanza bene</span>  
-                                <div class="text-time">16:30</div>
-                            </div>
-                        </div>
-                        <div class="wrapper-right">
-                            <div class="text-send">
-                                <span>oggi che fai? </span> 
-                                <div class="text-time">17:30</div>
-                            </div>
-                        </div> -->
                     </div>
                     <!-- /chat open -->
 
