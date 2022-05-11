@@ -6,8 +6,7 @@
 
 html {
     font-family: 'Lato', sans-serif;
-    /* background-color: #D7DBD7; */
-    background: linear-gradient(#009688 20%, #dcdbd1 20%)
+    background: linear-gradient(#009688 18%, #dcdbd1 18%)
 }
 
 /* MAIN */
@@ -51,7 +50,8 @@ html {
 
 .user-icon i {
     margin: 0 .5rem;
-    color: gray;
+    color: #B1B1B1;
+    font-size: 1.1rem;
 }
 
 .side-notification {
@@ -113,7 +113,7 @@ html {
 .side-other-chat {
     width: 100%;
     height: calc(100% - 155px);
-    overflow: scroll;
+    overflow-y: scroll;
     background-color: #FFFFFF;
 }
 
@@ -124,6 +124,10 @@ html {
     display: flex;
     align-items: center;
     border-bottom: 1px solid #FAFAFA;
+}
+
+.contact-active {
+    background-color: #E9EBEB;
 }
 
 .chat-item img{
@@ -143,6 +147,13 @@ html {
 .chat-text span {
     margin-left: .6rem;
     font-size: .9rem;
+}
+
+.time {
+    font-size: .6rem;
+    color: lightgray;
+    margin-left: 11rem;
+    margin-bottom: 1.5rem;
 }
 
 .chat-text p {
@@ -207,6 +218,7 @@ html {
 .main-chat-input i {
     margin: 2rem;
     color: gray;
+    font-size: 1.2rem;
 }
 
 .wrapper-right {
@@ -229,7 +241,7 @@ html {
     width: 30%;
     background-color: #D5F9BA;
     border-radius: 5px;
-    padding: .8rem;
+    padding: .6rem;
     font-size: .8rem;
     display: flex;
     flex-direction: column;
@@ -239,7 +251,7 @@ html {
     max-width: 50%;
     background-color: white;
     border-radius: 5px;
-    padding: .8rem;
+    padding: .6rem;
     font-size: .8rem;
     display: flex;
     flex-direction: column;

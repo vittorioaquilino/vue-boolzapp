@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1">
     <title>Document</title>
     <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -61,14 +61,16 @@
                         <div 
                         v-for="(element, index) in contacts" 
                         class="chat-item"
+                        :class="{ 'contact-active' : currentContact === index }"
                         >
                             <div class="user-img">
                                 <img :src="'img/avatar' + contacts[index].avatar + '.jpg'" alt="">
                             </div>
                             <div class="chat-text">
-                                <span>{{ contacts[index].name }}</span>
-                                <p>Ultimo messaggio inviato</p>
+                                <span>{{ element.name }}</span>
+                                <p>{{ element.messages[element.messages.length - 1].message }}</p>
                             </div>
+                            <!-- <div class="time">12:00</div> -->
                         </div>  
                     </div>
                     <!-- /side other chat -->
@@ -81,10 +83,10 @@
                     <div class="main-chat-profile">
                         <div class="left">
                             <div class="user-img">
-                                <img :src="'img/avatar' + contacts[0].avatar + '.jpg'" alt="">
+                                <img :src="'img/avatar' + contacts[currentContact].avatar + '.jpg'" alt="">
                             </div>
                             <div class="chat-text">
-                                <span>{{ contacts[0].name }}</span>
+                                <span>{{ contacts[currentContact].name }}</span>
                                 <p>Ultimo accesso oggi alle 12:00</p>
                             </div>
                         </div>
@@ -100,19 +102,25 @@
 
                     <!-- chat open -->
                     <div class="main-chat">
-                        <div class="wrapper-left">
+                        <div 
+                        v-for="(element, index) in contacts"
+                        class="wrapper-left"
+                        >
                             <div class="text-received">
-                                <span>ciao</span>
+                                <span>{{ contacts.message }}</span>
                                 <div class="text-time">15:30</div>
                             </div>
                         </div>
-                        <div class="wrapper-right">
+                        <div 
+                        v-for="(element, index) in contacts"
+                        class="wrapper-right"
+                        >
                             <div class="text-send">
-                                <span>ciao come stai? </span> 
+                                <span>{{ element.message }} </span> 
                                 <div class="text-time">15:40</div>
                             </div>
                         </div>
-                        <div class="wrapper-left">
+                        <!-- <div class="wrapper-left">
                             <div class="text-received">
                                 <span>tutto bene a te?</span> 
                                 <div class="text-time">16:00</div>
@@ -129,7 +137,7 @@
                                 <span>oggi che fai? </span> 
                                 <div class="text-time">17:30</div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <!-- /chat open -->
 
