@@ -221,6 +221,16 @@ html {
     font-size: 1.2rem;
 }
 
+.main-chat .text-send:hover i {
+    color: skyblue;
+    display: block;
+}
+
+.main-chat i {
+    display: none;
+    font-size: .6rem;
+    margin-left: .4rem;
+}
 .wrapper-right {
     display: flex;
     justify-content: flex-end;
@@ -262,4 +272,6 @@ html {
     font-size: .5rem;
     align-self: flex-end;
     color: lightgray;
+    display: flex;
 }
+

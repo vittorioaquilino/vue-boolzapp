@@ -108,7 +108,10 @@
                         >
                             <div :class="element.status === 'sent' ? 'text-send' : 'text-received'">
                                 <span>{{ element.message }} </span> 
-                                <div class="text-time">{{ element.date }}</div>
+                                <div class="text-time">
+                                    {{ element.date }}
+                                    <i class="fas fa-check-double"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
