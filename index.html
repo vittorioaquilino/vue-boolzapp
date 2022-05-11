@@ -62,6 +62,7 @@
                         v-for="(element, index) in contacts" 
                         class="chat-item"
                         :class="{ 'contact-active' : currentContact === index }"
+                        @click="checkUser(index)"
                         >
                             <div class="user-img">
                                 <img :src="'img/avatar' + element.avatar + '.jpg'" alt="">
@@ -70,7 +71,6 @@
                                 <span>{{ element.name }}</span>
                                 <p>{{ element.messages[element.messages.length - 1].message }}</p>
                             </div>
-                            <!-- <div class="time">12:00</div> -->
                         </div>  
                     </div>
                     <!-- /side other chat -->
@@ -117,7 +117,12 @@
                     <!-- chat input -->
                     <div class="main-chat-input">
                         <i class="far fa-smile"></i>
-                        <input type="text" placeholder="Scrivi un messaggio">
+                        <input 
+                        type="text" 
+                        placeholder="Scrivi un messaggio" 
+                        @keyup.enter="addMessage(contacts, currentContact)" 
+                        v-model="newMessage" 
+                        >
                         <i class="fas fa-microphone"></i>
                     </div>
                     <!-- /chat input -->
