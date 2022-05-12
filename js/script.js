@@ -182,6 +182,7 @@ const app = new Vue(
             ],
             currentContact: 0,
             newMessage: '',
+            search: '',
         },
         methods: {
             // funzione visualizzare chat corrente
@@ -190,7 +191,7 @@ const app = new Vue(
             },
 
             // funzione per scrivere un messaggio
-            addMessage : function(contacts ,currentContact) {
+            addMessage: function(contacts ,currentContact) {
                 if (this.newMessage !== "") {
                     this.contacts[currentContact].messages.push({message: this.newMessage, status: `sent`, date: dayjs().format('DD/MM/YYYY HH:mm:ss')});
                     this.newMessage = ``;
@@ -199,10 +200,23 @@ const app = new Vue(
             },
 
             // funzione per ricevere un messaggio
-            generateMessage(contacts, currentContact) {
+            generateMessage: function(contacts, currentContact) {
                 this.messageAuto = setTimeout( () => {
                     this.contacts[currentContact].messages.push({message: "Ok", status: `received`, date: dayjs().format('DD/MM/YYYY HH:mm:ss')});
                 }, 1000);
+            },
+
+            // funzione per filtrare le chat degli utenti
+            filterUser: function(contacts) {
+                this.contacts.forEach((element) => {
+                    const formattedText = element.name.toLowerCase();
+                    const formattedSearch = this.search.toLowerCase();
+                    if (formattedText.includes(formattedSearch)) {
+                        element.visible = true;
+                    } else {
+                        element.visible = false;
+                    }
+                });
             },
         }
     }
