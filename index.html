@@ -65,6 +65,7 @@
                         <div 
                         v-for="(element, index) in contacts" 
                         class="chat-item"
+                        v-if="element.visible === true"
                         :class="{ 'contact-active' : currentContact === index }"
                         @click="checkUser(index)"
                         >
