@@ -182,7 +182,6 @@ const app = new Vue(
             ],
             currentContact: 0,
             newMessage: '',
-            newDate: new Date()
         },
         methods: {
             // funzione visualizzare chat corrente
@@ -193,7 +192,7 @@ const app = new Vue(
             // funzione per scrivere un messaggio
             addMessage : function(contacts ,currentContact) {
                 if (this.newMessage !== "") {
-                    this.contacts[currentContact].messages.push({message: this.newMessage, status: `sent`, date: this.newDate});
+                    this.contacts[currentContact].messages.push({message: this.newMessage, status: `sent`, date: dayjs().format('DD/MM/YYYY HH:mm:ss')});
                     this.newMessage = ``;
                     this.generateMessage(contacts, currentContact);
                 }
@@ -202,7 +201,7 @@ const app = new Vue(
             // funzione per ricevere un messaggio
             generateMessage(contacts, currentContact) {
                 this.messageAuto = setTimeout( () => {
-                    this.contacts[currentContact].messages.push({message: "Ok", status: `received`, date: this.newDate});
+                    this.contacts[currentContact].messages.push({message: "Ok", status: `received`, date: dayjs().format('DD/MM/YYYY HH:mm:ss')});
                 }, 1000);
             },
         }

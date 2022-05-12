@@ -38,6 +38,13 @@ html {
     align-items: center;
 }
 
+.side-user-profile .user-img img {
+    width: 40px;
+    height: 40px;
+    margin: 0 .5rem;
+
+}
+
 .user-img img{
     width: 40px;
     border-radius: 50%;
